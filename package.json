@@ -1,0 +1,19 @@
+{
+  "name": "basecase",
+  "private": true,
+  "packageManager": "bun@1.3.13",
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently --names api,web --prefix-colors blue,green \"bun run dev:api\" \"bun run dev:web\"",
+    "dev:api": "uv run --directory backend fastapi dev main.py --port 8000",
+    "dev:web": "bun run --cwd frontend dev",
+    "build": "bun run --cwd frontend build",
+    "lint": "bun run --cwd frontend lint && uv run --directory backend ruff check . && uv run --directory backend ty check",
+    "format": "uv run --directory backend ruff format ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
