@@ -1,0 +1,111 @@
+1
+00:00:02,000 --> 00:00:05,006
+Genomic research rarely begins with a coordinate.
+
+2
+00:00:05,006 --> 00:00:07,153
+It begins with a question.
+
+3
+00:00:07,153 --> 00:00:11,447
+Basecase turns that question into a focused, inspectable evidence workflow.
+
+4
+00:00:11,447 --> 00:00:18,747
+On the left is a genome browser with genes, clinical variants, regulatory elements, population frequency, and conservation.
+
+5
+00:00:18,747 --> 00:00:27,765
+On the right is an evidence agent that understands both the question and the exact genomic context currently attached to it.
+
+6
+00:00:27,765 --> 00:00:32,918
+Start with a disease-level prompt: which genes are related to hypertrophic cardiomyopathy?
+
+7
+00:00:32,918 --> 00:00:38,071
+The agent translates the request into a genomic plan, gathers grounded evidence,
+
+8
+00:00:38,071 --> 00:00:41,935
+and streams a concise reasoning summary before the answer.
+
+9
+00:00:41,935 --> 00:00:49,665
+Instead of returning a wall of text, it ranks linked genes and makes the important next actions obvious.
+
+10
+00:00:49,665 --> 00:00:57,394
+Open MYH7, and the browser moves to the gene while preserving the precise locus as a visible selection.
+
+11
+00:00:57,394 --> 00:01:00,400
+The answer is not a dead end.
+
+12
+00:01:00,400 --> 00:01:05,982
+Every gene, variant, feature, and range can take you back into the evidence.
+
+13
+00:01:05,982 --> 00:01:08,559
+You can also select context directly.
+
+14
+00:01:08,559 --> 00:01:14,141
+Shift-drag across the ruler to attach a range without immediately moving the viewport.
+
+15
+00:01:14,141 --> 00:01:22,300
+Add a second range, compare them together, remove either one, or use its focus control when you are ready.
+
+16
+00:01:22,300 --> 00:01:28,741
+The context chips above the conversation always show exactly what the next question will use.
+
+17
+00:01:28,741 --> 00:01:31,318
+Queries can be much more specific.
+
+18
+00:01:31,318 --> 00:01:35,182
+Ask for nearby enhancers around rs334 in blood cells.
+
+19
+00:01:35,182 --> 00:01:38,618
+Basecase resolves the variant, searches relevant regulatory evidence,
+
+20
+00:01:38,618 --> 00:01:45,059
+and groups optional browser tracks separately from the primary action, so the interface stays focused.
+
+21
+00:01:45,059 --> 00:01:50,641
+For a VCF row, the exact allele is treated as the query anchor,
+
+22
+00:01:50,641 --> 00:01:54,935
+while the wider window is clearly labeled as surrounding context.
+
+23
+00:01:54,935 --> 00:01:59,659
+Selecting the anchor opens the locus and marks the precise base,
+
+24
+00:01:59,659 --> 00:02:04,812
+even when the underlying ClinVar or population track is displayed as density.
+
+25
+00:02:04,812 --> 00:02:11,682
+Finally, the agent can write its grounded result back into the browser as an annotation track.
+
+26
+00:02:11,682 --> 00:02:17,694
+Those annotations remain available after reload and can be managed like any other track.
+
+27
+00:02:17,694 --> 00:02:22,847
+Basecase creates a tight loop between asking, inspecting, focusing, comparing, and annotating—
+
+28
+00:02:22,847 --> 00:02:28,000
+so every answer stays connected to the genome and to its evidence.

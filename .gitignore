@@ -3,12 +3,24 @@
 .env.*
 !.env.example
 
-backend/.venv/
-backend/__pycache__/
-backend/.pytest_cache/
-backend/.ruff_cache/
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
 
 frontend/node_modules/
 frontend/dist/
 
 node_modules/
+
+# Generated demo media and QA artifacts
+demo/captures/
+demo/qa/
+demo/cards/
+demo/*.mp3
+demo/*.mp4

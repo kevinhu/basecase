@@ -1,0 +1,931 @@
+.app-shell[data-ui-variant='precision'] {
+  --ink: #10283b;
+  --muted: #edf3f3;
+  --muted-foreground: #60747c;
+  --border: #d7e0df;
+  --border-strong: #bccbc9;
+  --canvas: #f4f8f7;
+  --primary: #12384b;
+  --primary-foreground: #f8ffff;
+  --accent: #e2f0ed;
+  --accent-foreground: #123d43;
+  --ring: #168b83;
+  --input: #cdd9d7;
+  --destructive: #ba3f46;
+  --radius: 0.375rem;
+  min-height: 100vh;
+  color: var(--ink);
+  background: #f7faf9;
+  font-variant-numeric: tabular-nums;
+}
+
+.app-shell[data-ui-variant='precision'] .topbar {
+  height: 48px;
+  padding-inline: 16px;
+  border-color: #cbd7d5;
+  background: rgb(252 253 251 / 96%);
+  backdrop-filter: blur(10px) saturate(0.8);
+  box-shadow: 0 1px 0 rgb(20 55 64 / 3%);
+}
+
+.app-shell[data-ui-variant='precision'] .brand {
+  color: #0d2d3e;
+  font-size: 14px;
+  font-weight: 760;
+  letter-spacing: -0.025em;
+}
+
+.app-shell[data-ui-variant='precision'] .topbar-identity [data-slot='badge'] {
+  height: 20px;
+  border: 1px solid #cfddda;
+  border-radius: 4px;
+  color: #3b5b61;
+  background: #edf5f3;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+.app-shell[data-ui-variant='precision'] .locus-search {
+  border-color: #c7d4d2;
+  border-radius: 6px;
+  background: #f7faf9;
+  box-shadow: inset 0 1px 2px rgb(21 49 54 / 4%);
+}
+
+.app-shell[data-ui-variant='precision'] .locus-search:focus-within {
+  border-color: #328f88;
+  box-shadow: 0 0 0 2px rgb(31 143 133 / 12%);
+}
+
+.app-shell[data-ui-variant='precision'] .locus-submit {
+  border-radius: 4px;
+  color: #f5fffd;
+  background: #123b4a;
+}
+
+.app-shell[data-ui-variant='precision'] .locus-submit:hover {
+  background: #0a6670;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.browser-actions, .navigation-controls) button {
+  color: #36535c;
+  border-radius: 4px;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.browser-actions, .navigation-controls) button:hover {
+  color: #0d6e6a;
+  background: #e8f2f0;
+}
+
+.app-shell[data-ui-variant='precision'] :is(button, [role='button']):active {
+  transform: scale(0.97);
+}
+
+.app-shell[data-ui-variant='precision'] .workspace {
+  grid-template-columns: minmax(0, 1.9fr) minmax(330px, 0.72fr);
+  background: #f7faf9;
+}
+
+.app-shell[data-ui-variant='precision'] .browser-panel,
+.app-shell[data-ui-variant='precision'] .genome-browser {
+  background: #fbfcfa;
+}
+
+.app-shell[data-ui-variant='precision'] .genome-ruler,
+.app-shell[data-ui-variant='precision'] .genome-track {
+  grid-template-columns: 126px minmax(0, 1fr);
+}
+
+.app-shell[data-ui-variant='precision'] .genome-ruler {
+  min-height: 52px;
+  background: #f1f6f5;
+  box-shadow: inset 0 -1px 0 #cfdad8;
+}
+
+.app-shell[data-ui-variant='precision'] .ruler-label {
+  padding-inline: 12px;
+  color: #4e6870;
+  background: #eaf2f0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.ruler-axis, .ruler-minor-tick) {
+  border-color: #9eb3b1;
+  background-color: #9eb3b1;
+}
+
+.app-shell[data-ui-variant='precision'] .ruler-tick {
+  color: #536d75;
+  font-size: 8px;
+}
+
+.app-shell[data-ui-variant='precision'] .scale-bar,
+.app-shell[data-ui-variant='precision'] .scale-bar span {
+  color: #174c59;
+  border-color: #174c59;
+}
+
+.app-shell[data-ui-variant='precision'] .genome-track {
+  min-height: 50px;
+  border-color: #dce4e2;
+}
+
+.app-shell[data-ui-variant='precision'] .genome-track:hover {
+  background: #f7faf9;
+  box-shadow: inset 3px 0 #22938a;
+}
+
+.app-shell[data-ui-variant='precision'] .track-label {
+  min-height: 50px;
+  padding: 8px 7px 6px 12px;
+  border-color: #cfdbd9;
+  background: #f6f9f8;
+}
+
+.app-shell[data-ui-variant='precision'] .track-label strong {
+  max-width: 74px;
+  color: #173849;
+  font-size: 11px;
+  font-weight: 680;
+}
+
+.app-shell[data-ui-variant='precision'] .track-kind {
+  color: #74878c;
+  font-size: 8px;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+}
+
+.app-shell[data-ui-variant='precision'] .track-limit-badge {
+  border-color: #c9d7d4;
+  border-radius: 3px;
+  color: #506d72;
+  background: #eaf2f0;
+}
+
+.app-shell[data-ui-variant='precision'] .track-canvas {
+  min-height: 50px;
+  padding-inline: 14px;
+  background-color: #fbfcfa;
+  background-image: linear-gradient(to right, transparent calc(100% - 1px), #e7eceb 100%);
+  background-size: 5% 100%;
+}
+
+.app-shell[data-ui-variant='precision'] .track-canvas svg {
+  min-height: 42px;
+}
+
+.app-shell[data-ui-variant='precision'] .gene-name {
+  color: #163f55;
+  font-weight: 720;
+  text-shadow: 0 1px #fbfcfa, 1px 0 #fbfcfa, 0 -1px #fbfcfa, -1px 0 #fbfcfa;
+}
+
+.app-shell[data-ui-variant='precision'] .gene-row-target:hover {
+  background: rgb(29 139 129 / 6%);
+}
+
+.app-shell[data-ui-variant='precision'] .signal-line {
+  stroke: #236985;
+}
+
+.app-shell[data-ui-variant='precision'] .signal-area {
+  fill: rgb(34 105 133 / 9%);
+}
+
+.app-shell[data-ui-variant='precision'] :is(.signal-baseline, .variant-baseline, .population-baseline, .context-baseline) {
+  stroke: #dce5e3;
+}
+
+.app-shell[data-ui-variant='precision'] .variant-density-benign,
+.app-shell[data-ui-variant='precision'] .population-common {
+  fill: #187a70;
+}
+
+.app-shell[data-ui-variant='precision'] .variant-density-pathogenic {
+  fill: #bf3e49;
+}
+
+.app-shell[data-ui-variant='precision'] .pointer-guide {
+  background: rgb(16 74 84 / 55%);
+}
+
+.app-shell[data-ui-variant='precision'] .pointer-guide > span {
+  border: 1px solid #527379;
+  border-radius: 3px;
+  background: #123d49;
+  box-shadow: 0 2px 8px rgb(8 45 53 / 16%);
+}
+
+.app-shell[data-ui-variant='precision'] .region-selection {
+  border-color: rgb(15 128 120 / 70%);
+  background: rgb(38 155 143 / 11%);
+}
+
+.app-shell[data-ui-variant='precision'] .selection-layer {
+  grid-template-columns: 126px minmax(0, 1fr);
+}
+
+.app-shell[data-ui-variant='precision'] .agent-panel {
+  border-color: #cbd8d5;
+  background: #f5f8f7;
+  box-shadow: -8px 0 28px rgb(17 61 66 / 3%);
+}
+
+.app-shell[data-ui-variant='precision'] .brief-content {
+  padding: 20px;
+}
+
+.app-shell[data-ui-variant='precision'] .evidence-card h2 {
+  color: #123848;
+  font-size: 19px;
+  font-weight: 690;
+}
+
+.app-shell[data-ui-variant='precision'] .evidence-source [data-slot='badge'] {
+  border-radius: 3px;
+  color: #126b66;
+  background: #dfeeea;
+}
+
+.app-shell[data-ui-variant='precision'] .evidence-card dl > div {
+  border-color: #d8e2e0;
+}
+
+.app-shell[data-ui-variant='precision'] .composer {
+  padding: 11px 12px 10px;
+  border-color: #cdd9d7;
+  background: #f8faf9;
+}
+
+.app-shell[data-ui-variant='precision'] .composer-field {
+  border-color: #b9cac7;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(19 55 61 / 5%);
+}
+
+.app-shell[data-ui-variant='precision'] .gene-results,
+.app-shell[data-ui-variant='precision'] .genome-tooltip {
+  border-color: #c6d5d2;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgb(14 52 58 / 14%);
+}
+
+.app-shell[data-ui-variant='precision'] .gene-results > button {
+  border-radius: 4px;
+}
+
+.app-shell[data-ui-variant='precision'] .gene-results > button:is(:hover, .is-active) {
+  background: #e9f3f1;
+}
+
+.app-shell[data-ui-variant='precision'] .browser-loading-veil {
+  background: rgb(224 232 230 / 78%);
+}
+
+html[data-ui-variant='precision'] [data-slot='dialog-overlay'] {
+  background: rgb(18 42 48 / 24%);
+  backdrop-filter: none;
+}
+
+html[data-ui-variant='precision'] .gene-detail-dialog {
+  --ink: #10283b;
+  --muted-foreground: #60747c;
+  --border: #d7e0df;
+  --border-strong: #bccbc9;
+  --canvas: #f4f8f7;
+  --primary: #12384b;
+  --accent: #e2f0ed;
+  border: 1px solid #bdccca;
+  border-radius: 8px;
+  color: #10283b;
+  background: #fbfcfa;
+  box-shadow: 0 18px 52px rgb(15 48 54 / 18%);
+}
+
+html[data-ui-variant='precision'] .gene-detail-dialog > [data-slot='dialog-close'] {
+  top: 11px;
+  right: 11px;
+  border-radius: 4px;
+  color: #506970;
+}
+
+html[data-ui-variant='precision'] .gene-detail-dialog > [data-slot='dialog-close']:hover {
+  color: #123d43;
+  background: #e5efed;
+}
+
+html[data-ui-variant='precision'] .gene-detail-header {
+  padding: 17px 48px 16px 18px;
+  border-color: #cad7d5;
+  background: #f3f7f6;
+}
+
+html[data-ui-variant='precision'] .gene-detail-identity {
+  gap: 10px;
+}
+
+html[data-ui-variant='precision'] .gene-detail-icon {
+  width: 34px;
+  height: 34px;
+  border-color: #bdd3ce;
+  border-radius: 5px;
+  color: #126b66;
+  background: #e2efec;
+}
+
+html[data-ui-variant='precision'] .gene-detail-icon svg {
+  width: 16px;
+}
+
+html[data-ui-variant='precision'] .gene-detail-title-line [data-slot='dialog-title'] {
+  color: #123848;
+  font-size: 20px;
+  font-weight: 720;
+  letter-spacing: -0.025em;
+}
+
+html[data-ui-variant='precision'] .gene-detail-title-line [data-slot='badge'] {
+  border: 1px solid #cedbd8;
+  border-radius: 3px;
+  color: #49636a;
+  background: #eaf2f0;
+  font-size: 8px;
+  font-weight: 620;
+  letter-spacing: 0.025em;
+}
+
+html[data-ui-variant='precision'] .gene-detail-title-line .gene-mane-badge {
+  border-color: #bcd9d1;
+  color: #126b66;
+  background: #dfeeea;
+}
+
+html[data-ui-variant='precision'] .gene-detail-header [data-slot='dialog-description'] {
+  color: #60747c;
+  font-size: 9px;
+}
+
+/* Professional neutral palette: reserve color for data and meaningful state. */
+.app-shell[data-ui-variant='precision'] {
+  --ink: #202832;
+  --muted: #f1f2f4;
+  --muted-foreground: #69717c;
+  --border: #dde0e4;
+  --border-strong: #c7ccd2;
+  --canvas: #f5f6f7;
+  --primary: #293745;
+  --primary-foreground: #fff;
+  --accent: #eef0f2;
+  --accent-foreground: #273543;
+  --ring: #6d8095;
+  --input: #d2d6db;
+  background: #f5f6f7;
+}
+
+.app-shell[data-ui-variant='precision'] .topbar {
+  border-color: #d8dce1;
+  background: rgb(252 252 251 / 96%);
+  box-shadow: 0 1px 0 rgb(31 41 55 / 3%);
+}
+
+.app-shell[data-ui-variant='precision'] .brand {
+  color: #202a35;
+}
+
+.app-shell[data-ui-variant='precision'] .topbar-identity [data-slot='badge'] {
+  border-color: #d8dce0;
+  color: #59636f;
+  background: #f1f2f3;
+}
+
+.app-shell[data-ui-variant='precision'] .locus-search {
+  border-color: #ccd1d6;
+  background: #f8f8f7;
+  box-shadow: inset 0 1px 2px rgb(31 41 55 / 4%);
+}
+
+.app-shell[data-ui-variant='precision'] .locus-search:focus-within {
+  border-color: #7d8fa3;
+  box-shadow: 0 0 0 2px rgb(100 116 139 / 12%);
+}
+
+.app-shell[data-ui-variant='precision'] .locus-submit {
+  color: #fff;
+  background: #334250;
+}
+
+.app-shell[data-ui-variant='precision'] .locus-submit:hover {
+  background: #273644;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.browser-actions, .navigation-controls) button {
+  color: #53606c;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.browser-actions, .navigation-controls) button:hover {
+  color: #263442;
+  background: #eceef0;
+}
+
+.app-shell[data-ui-variant='precision'] .workspace {
+  background: #f5f6f7;
+}
+
+.app-shell[data-ui-variant='precision'] .browser-panel,
+.app-shell[data-ui-variant='precision'] .genome-browser,
+.app-shell[data-ui-variant='precision'] .track-canvas {
+  background-color: #fff;
+}
+
+.app-shell[data-ui-variant='precision'] .genome-ruler {
+  background: #f4f5f6;
+  box-shadow: inset 0 -1px 0 #d8dce0;
+}
+
+.app-shell[data-ui-variant='precision'] .ruler-label {
+  color: #59646f;
+  background: #eef0f2;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.ruler-axis, .ruler-minor-tick) {
+  border-color: #afb6bd;
+  background-color: #afb6bd;
+}
+
+.app-shell[data-ui-variant='precision'] .ruler-tick {
+  color: #66717c;
+}
+
+.app-shell[data-ui-variant='precision'] .scale-bar,
+.app-shell[data-ui-variant='precision'] .scale-bar span {
+  color: #45596c;
+  border-color: #45596c;
+}
+
+.app-shell[data-ui-variant='precision'] .genome-track {
+  border-color: #e1e3e6;
+}
+
+.app-shell[data-ui-variant='precision'] .genome-track:hover {
+  background: #fafafa;
+  box-shadow: inset 2px 0 #718399;
+}
+
+.app-shell[data-ui-variant='precision'] .track-label {
+  border-color: #dde0e3;
+  background: #f7f8f8;
+}
+
+.app-shell[data-ui-variant='precision'] .track-label strong,
+.app-shell[data-ui-variant='precision'] .gene-name {
+  color: #263847;
+}
+
+.app-shell[data-ui-variant='precision'] .track-kind {
+  color: #7a838d;
+}
+
+.app-shell[data-ui-variant='precision'] .track-limit-badge {
+  border-color: #d5d9dd;
+  color: #626d78;
+  background: #eef0f1;
+}
+
+.app-shell[data-ui-variant='precision'] .track-canvas {
+  background-image: linear-gradient(to right, transparent calc(100% - 1px), #eef0f2 100%);
+}
+
+.app-shell[data-ui-variant='precision'] .gene-row-target:hover {
+  background: rgb(71 85 105 / 5%);
+}
+
+.app-shell[data-ui-variant='precision'] .signal-line {
+  stroke: #496b86;
+}
+
+.app-shell[data-ui-variant='precision'] .signal-area {
+  fill: rgb(73 107 134 / 8%);
+}
+
+.app-shell[data-ui-variant='precision'] :is(.signal-baseline, .variant-baseline, .population-baseline, .context-baseline) {
+  stroke: #e1e4e7;
+}
+
+.app-shell[data-ui-variant='precision'] .variant-density-benign,
+.app-shell[data-ui-variant='precision'] .population-common {
+  fill: #647d77;
+}
+
+.app-shell[data-ui-variant='precision'] .variant-density-pathogenic {
+  fill: #a94b53;
+}
+
+.app-shell[data-ui-variant='precision'] .pointer-guide {
+  background: rgb(51 65 85 / 52%);
+}
+
+.app-shell[data-ui-variant='precision'] .pointer-guide > span {
+  border-color: #657383;
+  background: #334250;
+  box-shadow: 0 2px 8px rgb(31 41 55 / 16%);
+}
+
+.app-shell[data-ui-variant='precision'] .region-selection {
+  background: linear-gradient(to bottom, rgb(100 116 139 / 8%) 0, rgb(100 116 139 / 3%) 42%, transparent 78%);
+}
+
+.app-shell[data-ui-variant='precision'] .region-selection::before,
+.app-shell[data-ui-variant='precision'] .region-selection::after {
+  background: linear-gradient(to bottom, rgb(91 113 138 / 72%) 0, rgb(91 113 138 / 28%) 62%, transparent 100%);
+}
+
+.app-shell[data-ui-variant='precision'] .agent-panel {
+  border-color: #d8dce0;
+  background: #f8f8f7;
+  box-shadow: -8px 0 28px rgb(31 41 55 / 3%);
+}
+
+.app-shell[data-ui-variant='precision'] .agent-context-bar {
+  border-color: #dde0e3;
+  color: #707984;
+  background: rgb(250 250 249 / 96%);
+}
+
+.app-shell[data-ui-variant='precision'] .agent-context-icon,
+.app-shell[data-ui-variant='precision'] .agent-avatar {
+  border-color: #d9dde1;
+  color: #52677c;
+  background: #eef0f2;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-context-copy > span, .agent-answer-identity strong, .agent-process-identity strong) {
+  color: #374550;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-context-copy code, .agent-answer-identity small, .agent-process-identity small) {
+  color: #7b848e;
+}
+
+.app-shell[data-ui-variant='precision'] .agent-welcome-kicker {
+  color: #5d7185;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-welcome h2, .agent-answer h2.agent-answer-title) {
+  color: #263642;
+}
+
+.app-shell[data-ui-variant='precision'] .agent-suggestions {
+  border-color: #dde0e3;
+}
+
+.app-shell[data-ui-variant='precision'] .agent-suggestions button {
+  border-color: #e3e5e7;
+  color: #34434f;
+}
+
+.app-shell[data-ui-variant='precision'] .agent-suggestions button > i {
+  background: #64788e;
+  box-shadow: 0 0 0 3px rgb(100 120 142 / 9%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .app-shell[data-ui-variant='precision'] .agent-suggestions button:hover {
+    color: #263642;
+    background: #f0f1f2;
+  }
+}
+
+.app-shell[data-ui-variant='precision'] .agent-selection-tip,
+.app-shell[data-ui-variant='precision'] .agent-user-message {
+  border-color: #dfe2e5;
+  color: #45515d;
+  background: #f0f1f2;
+}
+
+.app-shell[data-ui-variant='precision'] .agent-selection-tip span {
+  color: #53616e;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-reasoning-preface, .agent-live-reasoning) {
+  border-color: #ccd2d8;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-reasoning-preface > span, .agent-live-reasoning > span, .agent-live-draft > span) {
+  color: #65717d;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-answer-summary, .agent-live-reasoning p, .agent-live-draft p) {
+  color: #4d5964;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-live-status, .agent-process li > span) {
+  color: #5e7389;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-live-status i, .agent-stream-cursor, .agent-text-cursor) {
+  background: #64788e;
+  box-shadow: 0 0 0 3px rgb(100 120 142 / 10%);
+}
+
+.app-shell[data-ui-variant='precision'] .agent-process ol {
+  border-color: #d9dde1;
+}
+
+.app-shell[data-ui-variant='precision'] .agent-answer-actions button {
+  border-color: #d9dde1;
+  color: #506579;
+  background: #f6f6f5;
+}
+
+.app-shell[data-ui-variant='precision'] .composer {
+  padding: 8px 14px 12px;
+  background: linear-gradient(to bottom, rgb(248 248 247 / 0%), #f8f8f7 16px);
+}
+
+.app-shell[data-ui-variant='precision'] .composer-field {
+  border-color: #cfd4d9;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(31 41 55 / 4%), 0 6px 22px rgb(31 41 55 / 6%);
+}
+
+.app-shell[data-ui-variant='precision'] .composer-field:focus-within {
+  border-color: #8495a7;
+  box-shadow: 0 0 0 2px rgb(100 116 139 / 10%);
+}
+
+.app-shell[data-ui-variant='precision'] .gene-results,
+.app-shell[data-ui-variant='precision'] .genome-tooltip {
+  border-color: #d2d6da;
+  box-shadow: 0 14px 36px rgb(31 41 55 / 14%);
+}
+
+.app-shell[data-ui-variant='precision'] .gene-results > button:is(:hover, .is-active) {
+  background: #f0f1f2;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-result-section, .agent-gene-list) {
+  border-color: #dfe2e5;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-variant-table, .agent-feature-list, .agent-more-results) {
+  border-color: #e2e4e7;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-variant-table, .agent-feature-list, .agent-region-list, .agent-gene-list) > button {
+  border-color: #e2e4e7;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .app-shell[data-ui-variant='precision'] :is(.agent-variant-table, .agent-feature-list, .agent-region-list, .agent-gene-list) > button:hover {
+    background: #f0f1f2;
+  }
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-result-primary strong, .agent-feature-list strong, .agent-region-list strong, .agent-gene-copy strong) {
+  color: #344450;
+}
+
+.app-shell[data-ui-variant='precision'] .agent-result-detail strong {
+  color: #626a73;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-result-section code, .agent-gene-copy code) {
+  color: #66727e;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-result-section small, .agent-gene-copy > span) {
+  color: #747d86;
+}
+
+.app-shell[data-ui-variant='precision'] .agent-feature-list button > span:first-child,
+.app-shell[data-ui-variant='precision'] .agent-feature-list button > span:first-child[data-kind] {
+  color: #5f6973;
+  background: #eef0f2;
+}
+
+.app-shell[data-ui-variant='precision'] :is(.agent-section-label, .agent-more-results > summary, .agent-evidence-details > summary) {
+  color: #66717c;
+}
+
+.app-shell[data-ui-variant='precision'] .agent-evidence-details {
+  border-color: #dfe2e5;
+}
+
+.app-shell[data-ui-variant='precision'] .browser-loading-veil {
+  background: rgb(229 231 235 / 78%);
+}
+
+html[data-ui-variant='precision'] .gene-tabs {
+  gap: 1px;
+  padding: 7px 14px;
+  border-color: #d2dcda;
+  background: rgb(251 252 250 / 97%);
+}
+
+html[data-ui-variant='precision'] .gene-tabs button {
+  min-height: 27px;
+  padding-inline: 9px;
+  border-radius: 4px;
+  color: #60747c;
+  font-size: 8px;
+  font-weight: 620;
+}
+
+html[data-ui-variant='precision'] .gene-tabs button:hover {
+  color: #123d43;
+  background: #eaf2f0;
+}
+
+html[data-ui-variant='precision'] .gene-tabs button.is-active {
+  color: #0f625e;
+  background: #e2f0ed;
+  box-shadow: inset 0 0 0 1px #c6dcd7;
+}
+
+html[data-ui-variant='precision'] .gene-tab-panel {
+  padding: 17px 18px 20px;
+  background: #fbfcfa;
+}
+
+html[data-ui-variant='precision'] :is(
+  .gene-record-context,
+  .gene-overview,
+  .gene-function-section,
+  .locus-evidence-section,
+  .gene-insight-card,
+  .gene-detail-section
+) {
+  border-color: #d5dfdd;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: none;
+}
+
+html[data-ui-variant='precision'] .gene-detail-section {
+  padding: 15px;
+  border: 1px solid #d5dfdd;
+}
+
+html[data-ui-variant='precision'] .gene-record-context {
+  border-left: 3px solid #2a8c84;
+  background: #f4f8f7;
+}
+
+html[data-ui-variant='precision'] .gene-record-context code {
+  color: #315b60;
+}
+
+html[data-ui-variant='precision'] .gene-section-heading h3,
+html[data-ui-variant='precision'] .gene-detail-section h3 {
+  color: #173849;
+  font-size: 11px;
+  font-weight: 680;
+}
+
+html[data-ui-variant='precision'] .gene-section-heading svg {
+  color: #3d746f;
+}
+
+html[data-ui-variant='precision'] .gene-function-copy,
+html[data-ui-variant='precision'] .expression-bar > span {
+  color: #536970;
+}
+
+html[data-ui-variant='precision'] :is(.gene-context-row > span, .gene-context-row > a) {
+  border-color: #d2ddda;
+  border-radius: 4px;
+  background: #f6f9f8;
+}
+
+html[data-ui-variant='precision'] .gene-context-row > a:hover {
+  border-color: #aebfbc;
+  background: #eef5f3;
+}
+
+html[data-ui-variant='precision'] .gene-aliases [data-slot='badge'] {
+  border-radius: 3px;
+  color: #4f696e;
+  background: #edf3f2;
+}
+
+html[data-ui-variant='precision'] :is(.locus-evidence-grid > div, .locus-evidence-grid > button) {
+  border-color: #d7e0df;
+  border-radius: 5px;
+  background: #f7faf9;
+}
+
+html[data-ui-variant='precision'] .locus-evidence-grid > button:hover {
+  border-color: #8eb7b0;
+  background: #ebf4f2;
+}
+
+html[data-ui-variant='precision'] .locus-evidence-grid strong {
+  color: #173f4b;
+}
+
+html[data-ui-variant='precision'] .evidence-count {
+  border-color: #d4dfdc;
+  border-radius: 5px;
+  background: #f7faf9;
+}
+
+html[data-ui-variant='precision'] .evidence-count-danger { border-top-color: #b9414b; }
+html[data-ui-variant='precision'] .evidence-count-warning { border-top-color: #b27b2b; }
+html[data-ui-variant='precision'] .evidence-count-violet { border-top-color: #6e6798; }
+html[data-ui-variant='precision'] .evidence-count-success { border-top-color: #2f7b68; }
+
+html[data-ui-variant='precision'] .transcript-line::before {
+  background: #7aa8a3;
+}
+
+html[data-ui-variant='precision'] .transcript-line i,
+html[data-ui-variant='precision'] .expression-bar i {
+  background: #227e77;
+}
+
+html[data-ui-variant='precision'] .expression-bar > div,
+html[data-ui-variant='precision'] .insight-skeleton i,
+html[data-ui-variant='precision'] .gene-summary-loading i {
+  background: #e8efed;
+}
+
+html[data-ui-variant='precision'] :is(.insight-source-link, .literature-list > a:hover strong) {
+  color: #0f6f69;
+}
+
+html[data-ui-variant='precision'] .gene-record-links > a {
+  border-color: #d3dedc;
+  border-radius: 5px;
+  background: #fff;
+}
+
+html[data-ui-variant='precision'] .gene-record-links > a:hover {
+  border-color: #aebfbc;
+  background: #f1f7f5;
+}
+
+html[data-ui-variant='precision'] .gene-detail-footer {
+  padding: 10px 13px 10px 18px;
+  border-color: #cdd9d7;
+  background: #f3f7f6;
+}
+
+html[data-ui-variant='precision'] .gene-detail-footer [data-slot='button'] {
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .app-shell[data-ui-variant='precision'] .genome-ruler,
+  .app-shell[data-ui-variant='precision'] .genome-track {
+    grid-template-columns: 108px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  .app-shell[data-ui-variant='precision'] .topbar {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding-inline: 10px;
+  }
+
+  .app-shell[data-ui-variant='precision'] .browser-actions {
+    display: none;
+  }
+
+  .app-shell[data-ui-variant='precision'] .workspace {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(260px, 44%) minmax(0, 1fr);
+  }
+
+  .app-shell[data-ui-variant='precision'] .agent-panel {
+    min-width: 0;
+    border-top: 1px solid #d8dce0;
+    border-left: 0;
+  }
+
+  .app-shell[data-ui-variant='precision'] .genome-ruler,
+  .app-shell[data-ui-variant='precision'] .genome-track {
+    grid-template-columns: 92px minmax(0, 1fr);
+  }
+
+  .app-shell[data-ui-variant='precision'] .selection-layer {
+    grid-template-columns: 92px minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[data-ui-variant='precision'] *,
+  .app-shell[data-ui-variant='precision'] *::before,
+  .app-shell[data-ui-variant='precision'] *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
